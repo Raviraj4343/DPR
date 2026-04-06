@@ -39,6 +39,7 @@
     "Migraine": "Hydration; dark quiet room; avoid triggers; pain relief as advised"
   },
   "test_size": 0.2,
-  "accuracy": 0.657005,
+  "training_jobs": 1,
+  "accuracy": 0.650718,
   "dataset_path": "C:\\DPR\\ml-service\\data\\dataset.csv"
 }
