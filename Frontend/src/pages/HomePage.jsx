@@ -9,6 +9,11 @@ export default function HomePage() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
 
+  function handleRefresh() {
+    setResult(null);
+    setError("");
+  }
+
   async function handlePredict(payload) {
     setLoading(true);
     setError("");
@@ -33,7 +38,7 @@ export default function HomePage() {
       </header>
 
       <section className="layout-grid">
-        <SymptomForm onSubmit={handlePredict} loading={loading} />
+        <SymptomForm onSubmit={handlePredict} onRefresh={handleRefresh} loading={loading} />
         <ResultCard result={result} />
       </section>
 
