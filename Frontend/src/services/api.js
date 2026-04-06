@@ -1,7 +1,18 @@
 import axios from "axios";
 
+function normalizeBaseUrl(rawUrl) {
+  const fallback = "http://localhost:4000/api/v1";
+  const value = (rawUrl || fallback).trim().replace(/\/+$/, "");
+
+  if (value.endsWith("/api/v1")) {
+    return value;
+  }
+
+  return `${value}/api/v1`;
+}
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_API_URL || "http://localhost:4000/api/v1",
+  baseURL: normalizeBaseUrl(import.meta.env.VITE_BACKEND_API_URL),
   headers: { "Content-Type": "application/json" },
   timeout: 8000,
 });
