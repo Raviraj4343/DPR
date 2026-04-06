@@ -1,0 +1,44 @@
+{
+  "feature_columns": [
+    "cough",
+    "fever",
+    "headache",
+    "vomiting",
+    "diarrhea",
+    "fatigue",
+    "body_pain",
+    "sore_throat",
+    "runny_nose",
+    "breathlessness",
+    "chest_pain",
+    "abdominal_pain",
+    "rash",
+    "joint_pain",
+    "loss_of_taste_smell"
+  ],
+  "target_disease": "disease",
+  "target_remedies": "remedies",
+  "classes": [
+    "Asthma",
+    "COVID-19",
+    "Common Cold",
+    "Dengue",
+    "Food Poisoning",
+    "Influenza",
+    "Migraine",
+    "Pneumonia"
+  ],
+  "remedy_map": {
+    "Influenza": "Rest; hydration; fever control medicines; consult doctor for antivirals",
+    "COVID-19": "Isolate; hydration; symptomatic care; seek care if breathing worsens",
+    "Pneumonia": "Immediate doctor visit; antibiotics if advised; rest; monitor oxygen",
+    "Food Poisoning": "Oral rehydration salts; light diet; probiotics; urgent care if severe",
+    "Asthma": "Use inhaler as prescribed; avoid triggers; breathing exercises; medical follow-up",
+    "Common Cold": "Rest; warm fluids; steam inhalation; saline nasal spray",
+    "Dengue": "Hydration; rest; paracetamol only; monitor platelets and warning signs",
+    "Migraine": "Hydration; dark quiet room; avoid triggers; pain relief as advised"
+  },
+  "test_size": 0.2,
+  "accuracy": 0.657005,
+  "dataset_path": "C:\\DPR\\ml-service\\data\\dataset.csv"
+}
