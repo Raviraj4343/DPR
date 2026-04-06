@@ -9,7 +9,7 @@ function buildInitialState() {
   }, {});
 }
 
-export default function SymptomForm({ onSubmit, loading }) {
+export default function SymptomForm({ onSubmit, onRefresh, loading }) {
   const [values, setValues] = useState(buildInitialState);
   const [error, setError] = useState("");
 
@@ -37,6 +37,12 @@ export default function SymptomForm({ onSubmit, loading }) {
     await onSubmit(values);
   }
 
+  function handleRefresh() {
+    setValues(buildInitialState());
+    setError("");
+    if (onRefresh) onRefresh();
+  }
+
   return (
     <form className="card" onSubmit={handleSubmit}>
       <div className="card-header">
@@ -59,9 +65,14 @@ export default function SymptomForm({ onSubmit, loading }) {
 
       {error && <p className="form-error">{error}</p>}
 
-      <button type="submit" className="btn-primary" disabled={loading}>
-        {loading ? "Predicting..." : "Predict Disease"}
-      </button>
+      <div className="btn-row">
+        <button type="button" className="btn-secondary" onClick={handleRefresh}>
+          Refresh
+        </button>
+        <button type="submit" className="btn-primary" disabled={loading}>
+          {loading ? "Predicting..." : "Predict Disease"}
+        </button>
+      </div>
     </form>
   );
 }
