@@ -1,0 +1,17 @@
+export const SYMPTOMS = [
+  { key: "cough", label: "Cough" },
+  { key: "fever", label: "Fever" },
+  { key: "headache", label: "Headache" },
+  { key: "vomiting", label: "Vomiting" },
+  { key: "diarrhea", label: "Diarrhea" },
+  { key: "fatigue", label: "Fatigue" },
+  { key: "body_pain", label: "Body Pain" },
+  { key: "sore_throat", label: "Sore Throat" },
+  { key: "runny_nose", label: "Runny Nose" },
+  { key: "breathlessness", label: "Breathlessness" },
+  { key: "chest_pain", label: "Chest Pain" },
+  { key: "abdominal_pain", label: "Abdominal Pain" },
+  { key: "rash", label: "Rash" },
+  { key: "joint_pain", label: "Joint Pain" },
+  { key: "loss_of_taste_smell", label: "Loss of Taste/Smell" },
+];
