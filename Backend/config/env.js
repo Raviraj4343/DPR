@@ -10,4 +10,12 @@ const env = {
   ML_TIMEOUT_MS: Number(process.env.ML_TIMEOUT_MS || 5000),
 };
 
+const corsOrigins = String(env.CORS_ORIGIN)
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+env.CORS_ORIGINS = corsOrigins;
+env.CORS_ALLOW_ALL = corsOrigins.includes("*");
+
 module.exports = { env };
