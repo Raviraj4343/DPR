@@ -7,7 +7,9 @@ const env = {
   PORT: Number(process.env.PORT || 4000),
   CORS_ORIGIN: process.env.CORS_ORIGIN || "*",
   ML_SERVICE_URL: process.env.ML_SERVICE_URL || "http://127.0.0.1:5000",
-  ML_TIMEOUT_MS: Number(process.env.ML_TIMEOUT_MS || 5000),
+  ML_TIMEOUT_MS: Number(process.env.ML_TIMEOUT_MS || 15000),
+  ML_RETRY_ATTEMPTS: Number(process.env.ML_RETRY_ATTEMPTS || 2),
+  ML_RETRY_DELAY_MS: Number(process.env.ML_RETRY_DELAY_MS || 1000),
 };
 
 const corsOrigins = String(env.CORS_ORIGIN)
